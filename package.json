@@ -1,0 +1,17 @@
+{
+  "name": "cloud_firestore_with_nodejs",
+  "version": "1.0.0",
+  "description": "nested queries with cloud firestore and node express framework",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Rupam Sau",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.10.0"
+  }
+}
