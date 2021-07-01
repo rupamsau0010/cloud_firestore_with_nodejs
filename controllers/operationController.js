@@ -60,3 +60,24 @@ module.exports.createUser_post = async(req, res) => {
         })
     })
 }
+
+// Get user details
+module.exports.getUsers_get = async(req, res) => {
+    const snapsort = db.collection("generaluser").get();
+    let arr = [];
+    (await snapsort).forEach((doc) => {
+        arr.push(doc.data());
+    })
+    
+    if (arr.length !== 0) {
+        res.json({
+            status: "success",
+            payload: arr
+        })
+    } else {
+        res.json({
+            status: "failure",
+            payload: null
+        })
+    }
+}
