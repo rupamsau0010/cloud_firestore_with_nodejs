@@ -1,12 +1,19 @@
 // Import depandencies
 require("dotenv").config();
 const express = require("express");
-const Firebase = require("firebase-admin");
 
 const app = express();
 
 // Inport local depandencies
+const createUser = require("./configs/cloudFirestore");
 
+
+// Express Middlewares
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
+// Calling the cloudFirestore Function for Initial Connection Testing
+createUser()
 
 // port 3000
 const port = process.env.PORT;
